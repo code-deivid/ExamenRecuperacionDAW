@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Usuarios{% endblock %}
+
+{% block content %}
+  <h1>Usuarios</h1>
+
+  <div class="card">
+    <a href="/health">Comprobar conexión con base de datos</a>
+  </div>
+
+  {% if error %}
+    <div class="card">
+      <p><strong>Error de base de datos</strong></p>
+      <p class="muted">{{ error }}</p>
+      <p class="muted">Comprueba <code>.env</code> y la tabla <code>users</code>.</p>
+    </div>
+  {% else %}
+    <div class="card">
+      {% if users and users|length > 0 %}
+        <p class="muted">Listado obtenido desde MySQL.</p>
+        <ul>
+          {% for u in users %}
+            <li>
+              <strong>{{ u[1] }}</strong> — {{ u[2] }}
+              {% if u[3] %} · {{ u[3] }}{% endif %}
+              <span class="muted">(id={{ u[0] }})</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No hay usuarios en la base de datos.</p>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}

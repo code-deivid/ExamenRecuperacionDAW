@@ -1,0 +1,9 @@
+body { font-family: Arial, sans-serif; background: #fff59d; margin: 0; }
+header { background: #ffeb3b; padding: 14px 16px; border-bottom: 2px solid #111; }
+main { padding: 16px; }
+a { color: #111; font-weight: bold; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.card { background: rgba(255,255,255,.85); padding: 12px; border: 2px solid #111; border-radius: 10px; margin-top: 12px; }
+ul { line-height: 1.8; }
+.muted { opacity: .7; }
+code { background: #fff; padding: 2px 6px; border-radius: 6px; border: 1px solid #111; }

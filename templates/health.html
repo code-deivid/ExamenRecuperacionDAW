@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Health{% endblock %}
+
+{% block content %}
+  <h1>Estado de la base de datos</h1>
+
+  {% if ok %}
+    <div class="card">
+      <p><strong>✔ Conexión correcta</strong></p>
+      <p class="muted">La aplicación puede conectarse a MySQL.</p>
+    </div>
+  {% else %}
+    <div class="card">
+      <p><strong>✖ Error de conexión</strong></p>
+      <p class="muted">{{ error }}</p>
+    </div>
+  {% endif %}
+{% endblock %}
