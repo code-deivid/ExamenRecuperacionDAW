@@ -1,7 +1,8 @@
 from os import getenv
 from dotenv import load_dotenv
 from flask import Flask, render_template
-import mysql.connector
+from mysql import connector
+
 
 
 load_dotenv()
@@ -9,7 +10,7 @@ servidor = Flask(__name__)
 
 
 def db_conn():
-    return mysql.connector.connect(
+    return connector.connect(
         user=getenv("USER"),
         host=getenv("HOST"),
         password=getenv("PASSWORD"),
